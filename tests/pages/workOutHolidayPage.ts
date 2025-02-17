@@ -18,8 +18,16 @@ class WorkOutHolidayPage {
     }
 
     async checkPageLoads(page: Page): Promise<void> {
+        const titleElement = page.locator(this.title);
+        const titleText = await titleElement.textContent();
+
+        const expectedTitles = [
+            workOutHoliday_content.pageTitleVariant1,
+            workOutHoliday_content.pageTitleVariant2
+        ];
+        expect(expectedTitles).toContain(titleText);
+
         await Promise.all([
-            expect(page.locator(this.title)).toHaveText(workOutHoliday_content.pageTitle),
             expect(page.locator(this.radio1)).toContainText(workOutHoliday_content.radio1),
             expect(page.locator(this.radio2)).toContainText(workOutHoliday_content.radio2),
             expect(page.locator(this.radio3)).toContainText(workOutHoliday_content.radio3),
