@@ -34,7 +34,6 @@ class LandingPage {
   }
 
   async continueOn(page: Page): Promise<void> {
-    // Click the continue button
     await page.getByRole("button", { name: "Start now" }).click();
   }
 }

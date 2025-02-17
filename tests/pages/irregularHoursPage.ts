@@ -32,10 +32,13 @@ class irregularHoursPage {
     await axeTest(page);
   }
 
-  async continueOn(page: Page): Promise<void> {
-    // Select the No radio button
+  async continueWithNoSelected(page: Page): Promise<void> {
     await page.click('label[for="response-1"]');
-    // Click the continue button
+    await page.getByRole("button", { name: "Continue" }).click();
+  }
+
+  async continueWithYesSelected(page: Page): Promise<void> {
+    await page.click('label[for="response-0"]');
     await page.getByRole("button", { name: "Continue" }).click();
   }
 

@@ -28,9 +28,23 @@ class WorkOutHolidayPage {
         await axeTest(page);
     }
 
-    async continueOn(page: Page): Promise<void> {
+    async continueWithFullLeaveYearSelected(page: Page): Promise<void> {
         await page.click('label[for="response-0"]');
-        // Click the continue button
+        await page.getByRole("button", { name: "Continue" }).click();
+    }
+
+    async continueWithSomeoneStartingPartWayThroughLeaveYearSelected(page: Page): Promise<void> {
+        await page.click('label[for="response-1"]');
+        await page.getByRole("button", { name: "Continue" }).click();
+    }
+
+    async continueWithSomeoneLeavingPartWayThroughLeaveYearSelected(page: Page): Promise<void> {
+        await page.click('label[for="response-2"]');
+        await page.getByRole("button", { name: "Continue" }).click();
+    }
+
+    async continueWithSomeoneStartingAndLeavingPartWayThroughLeaveYearSelected(page: Page): Promise<void> {
+        await page.click('label[for="response-3"]');
         await page.getByRole("button", { name: "Continue" }).click();
     }
 }

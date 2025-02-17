@@ -35,8 +35,28 @@ class HolidayEntitlementPage {
     await axeTest(page);
   }
   
-  async continueOn(page: Page): Promise<void> {
+  async continueWithDaysWorkedPerWeekSelected(page: Page): Promise<void> {
     await page.click('label[for="response-0"]');
+    await page.getByRole("button", { name: "Continue" }).click();
+  }
+
+  async continueWithHoursWorkedPerWeekSelected(page: Page): Promise<void> {
+    await page.click('label[for="response-1"]');
+    await page.getByRole("button", { name: "Continue" }).click();
+  }
+
+  async continueWithAnnualisedHoursSelected(page: Page): Promise<void> {
+    await page.click('label[for="response-2"]');
+    await page.getByRole("button", { name: "Continue" }).click();
+  }
+
+  async continueWithCompressedHoursSelected(page: Page): Promise<void> {
+    await page.click('label[for="response-3"]');
+    await page.getByRole("button", { name: "Continue" }).click();
+  }
+
+  async continueWithShiftsSelected(page: Page): Promise<void> {
+    await page.click('label[for="response-4"]');
     await page.getByRole("button", { name: "Continue" }).click();
   }
 }
