@@ -1,0 +1,22 @@
+{
+  "name": "my-playwright-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "matt-k1998 <mateusz.kolakowski@justice.gov.uk>",
+  "license": "MIT",
+  "packageManager": "yarn@4.6.0",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.12.0",
+    "playwright": "^1.50.1",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "test-chromium": "playwright test --project chromium --headed",
+    "test-firefox": "playwright test --project firefox --headed",
+    "test-webkit": "playwright test --project webkit --headed",
+    "test-mobileChrome": "playwright test --project mobileChrome --headed",
+    "test-mobileSafari": "playwright test --project mobileSafari --headed"
+  }
+}
